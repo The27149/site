@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .textarea {
+        display: block;
+    }
+
+    #key {
+        width: 300px;
+    }
+</style>
+
+<body>
+    <button type="button" id="checkTxtBtn">查看当前密文</button>
+    <textarea class="textarea" name="" id="inText" cols="100" rows="20" placeholder="输入区"></textarea>
+    <hr>
+    <h4>密码提示：小学名称和小学班长名称？</h4>
+    <input type="text" name="" id="key" width="50" placeholder="输入密码 汉字编码大更长更安全">
+    <input type="button" id="encodeBtn" value="加密">
+    <input type="button" id="decodeBtn" value="解密">
+    <hr>
+    <textarea class="textarea" name="" id="outText" cols="100" rows="20" placeholder="显示区" readonly></textarea>
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+<script src="src/js/index.js"></script>
+<script>
+    $(`#encodeBtn`).click(() => {
+        handle(0, true);
+    })
+    $(`#decodeBtn`).click(() => {
+        handle(1, true);
+    })
+
+    //type 0加密， 1解密
+    function handle(type, isShow) {
+        let inText = $(`#inText`).val().trim();
+        let key = $(`#key`).val().trim();
+        $(`#outText`).val(``);
+        if (!inText || !key) return;
+        let encryption = new Encryption(key);
+        let str = type === 0 ? encryption.encodeHex(inText) : encryption.decodeHex(inText);
+        isShow && $(`#outText`).val(str);
+        return str;
+    }
+
+    $(`#checkTxtBtn`).click(() => {
+        window.open(`./密文.txt`);
+    })
+</script>
+
+</html>

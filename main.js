@@ -15,4 +15,8 @@ window.onload = () => {
         window.open(`mathGraphics/index.html`);
     })
 
+    $(`#encryption`).click(() => {
+        window.open(`encryption/index.html`);
+    })
+
 }
