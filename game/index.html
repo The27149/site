@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    /**初始化ui */
+    function initUI(list) {
+        let content = ``;
+        list.forEach(cfg => {
+            let { id, showName } = cfg;
+            let template = `
+        <button id="${id}" type="button">${showName}</button>
+        <br><br>
+        `;
+            content += template;
+        })
+        $(`body`).html(content);
+    }
+
+    /**添加事件 */
+    function addEvent(list) {
+        list.forEach(cfg => {
+            let { id, url, isOpenNewWeb } = cfg;
+            $(`#${id}`).click(() => {
+                let option = isOpenNewWeb ? `_blank` : `_self`;
+                window.open(url, option);
+            })
+        })
+    }
+
+    window.onload = () => {
+        //简易配置
+        let cfgList = [
+            { id: `1`, showName: `论打野的抓人重心`, url: `./content/jungleKingCreator.md` },
+            { id: `2`, showName: `影流之主`, url: `./content/zedKing.md` },
+        ];
+        initUI(cfgList);
+        addEvent(cfgList);
+    }
+
+</script>
+
+</html>
