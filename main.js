@@ -64,6 +64,7 @@ window.onload = () => {
     let cfgList = [
         { id: `mathGraphics0`, showName: `math graphics0--腾讯云`, url: `https://math-gfx-1327442820.cos.ap-guangzhou.myqcloud.com/web-mobile/index.html`, width: 1920, height: 1280 },
         { id: `mathGraphics1`, showName: `math graphics1--cloudflare`, url: `https://math-gfx.pages.dev/`, width: 1920, height: 1280 },
+        { id: `mathBezier`, showName: `math 贝塞尔曲线--cloudflare`, url: `https://bezier-dte.pages.dev`, width: 1920, height: 1280 },
         { id: `encryption`, showName: `加密`, url: `encryption/index.html` },
         { id: `game`, showName: `game`, url: `game/index.html` },
     ];
