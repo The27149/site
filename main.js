@@ -67,6 +67,7 @@ window.onload = () => {
         { id: `mathBezier`, showName: `math 贝塞尔曲线--cloudflare`, url: `https://bezier-dte.pages.dev`, width: 1920, height: 1280 },
         { id: `encryption`, showName: `加密`, url: `encryption/index.html` },
         { id: `game`, showName: `game`, url: `game/index.html` },
+        { id: `malaysia`, showName: `malaysia`, url: `malaysia/index.html` },
     ];
 
     //初始化实际配置
